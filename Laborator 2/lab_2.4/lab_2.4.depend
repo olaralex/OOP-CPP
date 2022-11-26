@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1669486965 source:d:\down\oop c++\laborator 2\lab_2.4\main.cpp
+	<iostream>
+	"vector.h"
+	<vector>
+	<algorithm>
+	<conio.h>
+
+1669483501 d:\down\oop c++\laborator 2\lab_2.4\include\vector.h
+
+1669487340 source:d:\down\oop c++\laborator 2\lab_2.4\src\vector.cpp
+	"vector.h"
+	<iostream>
+	<vector>
+	<algorithm>
+

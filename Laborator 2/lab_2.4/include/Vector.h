@@ -12,6 +12,10 @@ class Vector
         void nr_el();
         void sortare_v();
         void inserare_v();
+        void stergere_el();
+        void stergere_poz();
+        void cauta_v();
+        void vid_v();
 
     protected:
 
