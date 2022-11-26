@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1669008483 source:d:\olar alex\lab_2\src\vector.cpp
+	"vector.h"
+	<iostream>
+
+1669009548 d:\olar alex\lab_2\include\vector.h
+
+1669009558 source:d:\olar alex\lab_2\main.cpp
+	<iostream>
+	"vector.h"
+
