@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1669627919 source:d:\down\oop c++\laborator 4\lab_4.2\main.cpp
+	<iostream>
+	"building.h"
+
+1669625993 d:\down\oop c++\laborator 4\lab_4.2\include\building.h
+
+1669627890 source:d:\down\oop c++\laborator 4\lab_4.2\src\building.cpp
+	"building.h"
+	<string.h>
+	<iostream>
+	<fstream>
+	<stdio.h>
+
