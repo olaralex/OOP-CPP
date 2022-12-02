@@ -1,8 +1,3 @@
-#ifndef SETARTICLES_H
-#define SETARTICLES_H
-#include <fstream>
-#include <iostream>
-
 struct article
 {
     int ID;//ID-ul aticolululi
@@ -47,5 +42,3 @@ private:
     int no_articles=0;
     article a[20];
 };
-
-#endif // SETARTICLES_H

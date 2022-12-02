@@ -1,10 +1,8 @@
 # depslib dependency file v1.0
-1669621572 source:d:\down\oop c++\laborator 3\lab_3.4\main.cpp
+1670000174 source:d:\down\oop c++\laborator 3\lab_3.4\main.cpp
 	<iostream>
 	<fstream>
 	"setArticles.h"
 
-1669621689 d:\down\oop c++\laborator 3\lab_3.4\include\setarticles.h
-	<fstream>
-	<iostream>
+1669999458 d:\down\oop c++\laborator 3\lab_3.4\include\setarticles.h
 

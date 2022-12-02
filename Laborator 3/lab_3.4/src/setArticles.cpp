@@ -1,6 +1,6 @@
+#include <iostream>
 #include "setArticles.h"
 #include <fstream>
-#include <iostream>
 
 using namespace std;
 
@@ -15,5 +15,6 @@ setArticles::~setArticles()
 }
 setArticles::setArticles(char *filename)
 {
-    file.open(filename, ios::in);
+    ofstream file;
+    file.open(file, ios::in);
 }

@@ -6,6 +6,6 @@ using namespace std;
 
 int main()
 {
-    setArticles articol("fisier.txt");
+    setArticles("fisier.txt");
     return 0;
 }
