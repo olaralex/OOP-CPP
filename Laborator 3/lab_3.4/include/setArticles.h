@@ -1,3 +1,8 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
 struct article
 {
     int ID;//ID-ul aticolululi
@@ -13,8 +18,7 @@ public:
     setArticles(char *filename);//citim datele din fisier
 ///exemplu: titlu1 autor1 1236 45.7 8
     void addArticle(article a);
-    void addArticle(char *title, char* author, int ID, float price, int
-                    no_copies);
+    void addArticle(char *title, char* author, int ID, float price, int no_copies);
     float getTotalPrice();
     void showArticles();
     virtual ~setArticles();
@@ -38,7 +42,7 @@ public:
     void deleteArt(int ID);
 protected:
 private:
-    static std::fstream file;
+    fstream file;
     int no_articles=0;
     article a[20];
 };
