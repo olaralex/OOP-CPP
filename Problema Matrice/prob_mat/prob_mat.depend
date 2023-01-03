@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1672753535 source:d:\down\oop c++\problema matrice\prob_mat\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	"Matrice.h"
+	"Sir.h"
+
+1672753396 d:\down\oop c++\problema matrice\prob_mat\include\matrice.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	"Matrice.h"
+	"Sir.h"
+
+1672750153 d:\down\oop c++\problema matrice\prob_mat\include\sir.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	"Matrice.h"
+	"Sir.h"
+
+1672753599 source:d:\down\oop c++\problema matrice\prob_mat\src\matrice.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	"Matrice.h"
+	"Sir.h"
+
+1672753741 source:d:\down\oop c++\problema matrice\prob_mat\src\sir.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<math.h>
+	"Matrice.h"
+	"Sir.h"
+

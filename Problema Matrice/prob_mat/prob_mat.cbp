@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="personal_1" />
+		<Option title="prob_mat" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/personal_1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/prob_mat" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/personal_1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/prob_mat" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,10 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="date" />
-		<Unit filename="include/student.h" />
+		<Unit filename="include/Matrice.h" />
+		<Unit filename="include/Sir.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/student.cpp" />
-		<Extensions />
+		<Unit filename="src/Matrice.cpp" />
+		<Unit filename="src/Sir.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
