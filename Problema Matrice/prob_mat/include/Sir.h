@@ -16,8 +16,8 @@ using namespace std;
 
 class Sir
 {
-    float x, y, z, v;
     public:
+        float x, y, z, v;
         Sir();
         //Constructor
         Sir(float x, float y, float z);

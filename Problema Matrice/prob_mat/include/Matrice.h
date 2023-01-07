@@ -25,6 +25,8 @@ class Matrice
         virtual ~Matrice();
         //Afisare
         void afisareMat();
+        void adunareMat(Matrice X, Matrice Y);
+        void scadereMat(Matrice X, Matrice Y);
     protected:
 
     private:
