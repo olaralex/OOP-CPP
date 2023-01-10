@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1673352185 source:d:\down\oop c++\personal\vehicule\masini\main.cpp
+	"masina.h"
+	"masinaElectrica.h"
+	"masinaClasica.h"
+	<iostream>
+	<string>
+
+1673352387 source:d:\down\oop c++\personal\vehicule\masini\src\masina.cpp
+	"masina.h"
+	<iostream>
+	<string>
+	<string.h>
+
+1673352068 d:\down\oop c++\personal\vehicule\masini\include\masina.h
+
+1673352373 source:d:\down\oop c++\personal\vehicule\masini\src\masinaclasica.cpp
+	"masinaClasica.h"
+	"masina.h"
+	<iostream>
+	<string>
+
+1673279368 d:\down\oop c++\personal\vehicule\masini\include\masinaclasica.h
+	"masina.h"
+
+1673352379 source:d:\down\oop c++\personal\vehicule\masini\src\masinaelectrica.cpp
+	"masinaElectrica.h"
+	"masina.h"
+	<iostream>
+	<string>
+
+1673351941 d:\down\oop c++\personal\vehicule\masini\include\masinaelectrica.h
+	"masina.h"
+
