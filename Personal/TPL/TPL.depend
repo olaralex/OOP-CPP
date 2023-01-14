@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1673720691 source:d:\down\oop c++\personal\tpl\src\bilet.cpp
+	"Bilet.h"
+
+1673720746 d:\down\oop c++\personal\tpl\include\bilet.h
+	<iostream>
+
+1673722909 source:d:\down\oop c++\personal\tpl\main.cpp
+	"Bilet.h"
+	"Scanner.h"
+	<iostream>
+
+1673723616 source:d:\down\oop c++\personal\tpl\src\scanner.cpp
+	"Scanner.h"
+	"Bilet.h"
+
+1673723620 d:\down\oop c++\personal\tpl\include\scanner.h
+	"Bilet.h"
+

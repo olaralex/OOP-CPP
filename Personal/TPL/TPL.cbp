@@ -34,11 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Controlor.h" />
-		<Unit filename="include/Persoana.h" />
+		<Unit filename="include/Bilet.h" />
+		<Unit filename="include/Scanner.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Controlor.cpp" />
-		<Unit filename="src/Persoana.cpp" />
+		<Unit filename="src/Bilet.cpp" />
+		<Unit filename="src/Scanner.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
