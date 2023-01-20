@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1674249299 source:d:\down\oop c++\personal\biblioteca\main.cpp
+	<iostream>
+	"carte.h"
+	"capitol.h"
+
+1674248022 source:d:\down\oop c++\personal\biblioteca\src\capitol.cpp
+	"capitol.h"
+	<string.h>
+	<iostream>
+	<fstream>
+
+1674249173 d:\down\oop c++\personal\biblioteca\include\capitol.h
+	<iostream>
+	<fstream>
+
+1674239825 source:d:\down\oop c++\personal\biblioteca\src\carte.cpp
+	"carte.h"
+	"capitol.h"
+
+1674239831 d:\down\oop c++\personal\biblioteca\include\carte.h
+	"carte.h"
+	"capitol.h"
+
