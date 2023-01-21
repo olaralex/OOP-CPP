@@ -91,6 +91,7 @@ capitol& capitol::operator = (capitol &c)
         nrPag = c.nrPag;
         //cout << nrPag << endl;
     }
+    return *this;
 }
 
 capitol capitol::operator + (int x)
