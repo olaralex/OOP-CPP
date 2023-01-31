@@ -116,7 +116,6 @@ public:
 };
 int Profesor::nextID = 0;//init membru static
 
-/*
 class Student : public Persoana
 {
     char nr_mat[20];    //numar matricol
@@ -163,6 +162,7 @@ public:
     }
     char* retProfesor(void)
     {
+
     }
 };
 
@@ -187,13 +187,13 @@ public:
         N++;
     }
 };
-*/
 
 int main()
 {
     cout << "[MODEL EXAMEN POO - 2022]" << endl;
     cout << "\nINTRODUCERE DATE" << endl;
 
+    /*
     Persoana p1("Ionescu", "Ion", "20.03.1992");
     Persoana p2("Popescu", "Vasile", "10.04.1993");
     Persoana p3;
@@ -202,19 +202,19 @@ int main()
     Persoana pr1("MARINESCU", "Vasile", "23.09.1972"), pr2("CORBU", "Stefan", "11.02.1973"), pr3;
     cin>>pr3;
     cout << pr3.retNumeComplet() << endl;
+    */
 
-    /*
     try
     {
         Persoana p1("Ionescu", "Ion", "20.03.1992"), p2("Popescu", "Vasile", "10.04.1993"), p3;
-        cin>>p3;
+        //cin>>p3;
         Student  *st[NrStudenti];
         st[0] = new Student( p1, "01/C", "Calculatoare" );
         st[1] = new Student( p2, "02/C", "Calculatoare" );
         st[2] = new Student( p3, "01/AIA", "Automatica" );
 
         Persoana pr1("MARINESCU", "Vasile", "23.09.1972"), pr2("CORBU", "Stefan", "11.02.1973"), pr3;
-        cin>>pr3;
+        //cin>>pr3;
         Profesor *pr[NrProfesori];
         pr[0] = new Profesor( pr1, "s.l.");
         pr[1] = new Profesor( pr2, "profesor");
@@ -237,6 +237,7 @@ int main()
         cout<<"\tDisciplina: "<<pers[3]->retNumeComplet()<<endl;
         cout<<"\tEND Teste POLIMORFISM!"<<endl;
 
+        /*
         Curicula *curicula[ NrCuricule ];
         curicula[0] = new Curicula( "Calculatoare" );
         curicula[0]->Add(1, *disc[0], "Obligatorie");
@@ -246,6 +247,7 @@ int main()
         curicula[1] = new Curicula( "Automatica" );
         curicula[1]->Add(1, *disc[1], "Obligatorie");
         curicula[1]->Add(1, *disc[2], "Obligatorie");
+        */
     }
     catch(Exceptie ex)
     {
@@ -282,6 +284,6 @@ int main()
     //Curicula::AnalizaDiferit( curicula[0], curicula[1] );
 
     cout <<"[END SUBIECT]"<<endl;
-    */
+
     return 0;
 }
