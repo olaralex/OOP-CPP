@@ -33,14 +33,6 @@ protected:
 public:
     Persoana( char _nume[]="", char _prenume[]="", char _data_n[]="")
     {
-        /*
-        nume = new char [strlen(_nume)+1];
-        strcpy(nume,_nume);
-        prenume = new char [strlen(_prenume)+1];
-        strcpy(prenume,_prenume);
-        data_n = new char [strlen(_data_n)+1];
-        strcpy(data_n,_data_n);
-        */
         strcpy(nume,_nume);
         strcpy(prenume,_prenume);
         strcpy(data_n,_data_n);
@@ -50,24 +42,23 @@ public:
         /*de completat*/
         return data_n;
     }
-    char* retNumeComplet(void)
+    virtual char* retNumeComplet(void)
     {
-        /*ade completat*/
-        return strcat(strcat(nume," "),prenume);
+        /*de completat*/
+        strcpy(_buff,nume);
+        strcat(_buff," ");
+        strcat(_buff,prenume);
+        return _buff;
     }
     friend istream& operator>>(istream &c, Persoana &p)
     {
         /*de completat*/
-        char s[25];
-        fflush(stdin);
-        c.getline(s,25);
-        //p.titlul = new char[strlen(s)+1];
-        //strcpy(p.titlul, s);
-        strcpy(p.nume,s);
-        strcpy(p.prenume,s);
-        strcpy(p.data_n,s);
-        //c>>p.pret;
-        return c;
+        cout << "Introdu intr-un singur rand: nume, prenume, data nasterii[dd.mm.yyyy]: ";
+        c>>p.nume>>p.prenume>>p.data_n;
+        if(strlen(p.data_n) != 10)
+        {
+            throw Exceptie("DATA NASTERE","Data nasterii incompleta");
+        }
     }
 };
 
@@ -81,9 +72,10 @@ class Profesor : public Persoana
 public:
     Profesor( Persoana &p, char _titlu[]) : Persoana(p), id_prof( ++nextID )
     {
-        if( strcmp(_titlu, "profesor") != 0 && strcmp(_titlu, "conferentiar") != 0
-                && strcmp(_titlu, "s.l." ) && strcmp(_titlu, "asistent" ) != 0 )
+        if( strcmp(_titlu, "Profesor") != 0 && strcmp(_titlu, "Conferentiar") != 0 && strcmp(_titlu, "S.L." ) && strcmp(_titlu, "Asistent" ) != 0 )
+        {
             throw Exceptie("PROFESOR", "Titlu incorect"); //Exceptie: titlu incorect
+        }
 
         strcpy(titlu, _titlu);
     }
@@ -93,7 +85,10 @@ public:
     }
     char* retNumeComplet(void)
     {
-        return strcat( strcat( strcat( strcat( strcpy(_buff, titlu)," "), nume), " "), prenume);
+        strcpy(_buff,titlu);
+        strcat(_buff," - ");
+        strcat(_buff,Persoana::retNumeComplet());
+        return _buff;
     }
 };
 int Profesor::nextID = 0;/*init membru static*/
@@ -103,18 +98,27 @@ class Student : public Persoana
 {
     char nr_mat[20];    /*numar matricol*/
     char specializ[20]; /*Specializare*/
-    char _buff[50]; /* utilizat pentru constructii de siruri returnate */
+    char _buff[100]; /* utilizat pentru constructii de siruri returnate */
 public:
-    Student(Persoana &_pers, char _nr_mat[], char _spec[])
+    Student(Persoana &_pers, char _nr_mat[], char _spec[]) : Persoana(_pers)
     {
         /*de completat*/
         strcpy(nr_mat,_nr_mat);
+        if( strcmp(_spec, "Calculatoare") != 0 && strcmp(_spec, "Automatica") != 0)
+        {
+            throw Exceptie("STUDENT", "Specializare inegzistenta"); //Exceptie: titlu incorect
+        }
         strcpy(specializ,_spec);
     }
     char* retNumeComplet(void)
     {
         /*de completat*/
-        return retNumeComplet();
+        strcpy(_buff,nr_mat);
+        strcat(_buff," - ");
+        strcat(_buff,specializ);
+        strcat(_buff," - ");
+        strcat(_buff,Persoana::retNumeComplet());
+        return _buff;
     }
     char* retNrMat(void)
     {
@@ -133,10 +137,15 @@ class Disciplina : public Profesor /* profesorului titular*/
     static int nextID;
     int id_disc;
     char denumire[20];
+    char _buff[50];
 public:
     Disciplina( char _den[], Profesor &p) : Profesor( p )
     {
         //de initializat ID-ul corect
+        if( strcmp(_den, "PCLP I") != 0 && strcmp(_den, "Fizica") != 0 && strcmp(_den, "Analiza Matematica" ) != 0)
+        {
+            throw Exceptie("DISCIPLINA", "Denumire incorecta"); //Exceptie: titlu incorect
+        }
         strcpy(denumire, _den);
     }
     int getIDDisc(void)
@@ -147,11 +156,15 @@ public:
     char* retNumeComplet(void)
     {
         /*de completat*/
-        return retNumeComplet();
+        strcpy(_buff,denumire);
+        strcat(_buff," - ");
+        strcat(_buff,Profesor::retNumeComplet());
+        return _buff;
     }
     char* retProfesor(void)
     {
         /*de completat*/
+        return Profesor::retNumeComplet();
     }
 };
 
@@ -162,7 +175,7 @@ class Curicula
     char den_specializ[50]; /*Specializare*/
     int  sem[20];           /*semestre: 1/2/3/4/5/6/7/8...*/
     int  id_disc[20];       /*id-uri discipline din curicula*/
-    char tip_disc[20][10];  /*Obigatorie/Facultativa/Optionala ...*/
+    char tip_disc[20][20];  /*Obigatorie/Facultativa/Optionala ...*/
 public:
     Curicula(char _spec[]) : N(0)
     {
@@ -186,29 +199,62 @@ int main()
     cout << "\nINTRODUCERE DATE" << endl;
     try
     {
-        Persoana p1("Ionescu", "Ion", "20.03.1992"), p2("Popescu", "Vasile", "10.04.1993"), p3/*de continuat*/;
+        Persoana p1("Ionescu", "Ion", "20.03.1992"), p2("Popescu", "Vasile", "10.04.1993"), p3/*p3("Olar", "Alex", "14.05.2002")*/, p4("Constantinescu", "Sorin", "20.03.1962"), p5("Becali", "George", "02.07.1960"), p6("Mancdachi", "Stefan", "11.02.1986");
         cin>>p3;
         Student  *st[NrStudenti];
         st[0] = new Student( p1, "01/C", "Calculatoare" );
         st[1] = new Student( p2, "02/C", "Calculatoare" );
         st[2] = new Student( p3, "01/AIA", "Automatica" );
         /*de continuat*/
+        st[3] = new Student( p4, "03/C", "Calculatoare" );
+        st[4] = new Student( p5, "04/C", "Calculatoare" );
+        st[5] = new Student( p6, "02/AIA", "Automatica" );
 
-        Persoana pr1("MARINESCU", "Vasile", "23.09.1972"), pr2("CORBU", "Stefan", "11.02.1973"), pr3/*de continuat*/;
+        cout << endl;
+        cout << "STUDENTII: " << endl;
+        for(int i=0;i<6;i++)
+        {
+            cout << "\t" << st[i]->retNumeComplet() << endl;
+        }
+        cout << endl;
+
+        Persoana pr1("MARINESCU", "Vasile", "23.09.1972"), pr2("CORBU", "Stefan", "11.02.1973"), pr3/*pr3("Olar", "Alex", "14.05.2002")*/, pr4("Constantinescu", "Sorin", "20.03.1962"), pr5("Becali", "George", "02.07.1960"), pr6("Mancdachi", "Stefan", "11.02.1986");
         cin>>pr3;
         Profesor *pr[NrProfesori];
-        pr[0] = new Profesor( pr1, "s.l.");
-        pr[1] = new Profesor( pr2, "profesor");
-        pr[2] = new Profesor( pr3, "conferentiar" );
+        pr[0] = new Profesor( pr1, "S.L.");
+        pr[1] = new Profesor( pr2, "Profesor");
+        pr[2] = new Profesor( pr3, "Conferentiar" );
         /*de continuat*/
+        pr[3] = new Profesor( pr4, "S.L.");
+        pr[4] = new Profesor( pr5, "Profesor");
+        pr[5] = new Profesor( pr6, "Conferentiar" );
+
+        cout << endl;
+        cout << "PROFESORII: " << endl;
+        for(int i=0;i<6;i++)
+        {
+            cout << "\t" << pr[i]->retNumeComplet() << endl;
+        }
+        cout << endl;
 
         Disciplina *disc[ NrDiscipline ];
         disc[0] = new Disciplina("PCLP I", *pr[0]);
-        disc[1] = new Disciplina("Fizica", *pr[2]);
-        disc[2] = new Disciplina("Analiza matematica", *pr[2]);
+        disc[1] = new Disciplina("Fizica", *pr[1]);
+        disc[2] = new Disciplina("Analiza Matematica", *pr[2]);
         /*de continuat*/
+        disc[3] = new Disciplina("PCLP I", *pr[3]);
+        disc[4] = new Disciplina("Fizica", *pr[4]);
+        disc[5] = new Disciplina("Analiza Matematica", *pr[5]);
 
-        cout<<"\tTeste POLIMORFISM:"<<endl;
+        cout << endl;
+        cout << "DISCIPLINELE: " << endl;
+        for(int i=0;i<6;i++)
+        {
+            cout << "\t" << disc[i]->retNumeComplet() << endl;
+        }
+        cout << endl;
+
+        cout<<"Teste POLIMORFISM:"<<endl;
         Persoana *pers[4];
         pers[0] = &p1;
         pers[1] = st[1];
