@@ -1,6 +1,109 @@
 # depslib dependency file v1.0
-1676054421 source:d:\down\oop c++\model\model\main.cpp
+1676133211 source:d:\down\oop c++\model\model\main.cpp
+	"Exceptie.h"
+	"Persoana.h"
+	"Profesor.h"
+	"Student.h"
+	"Disciplina.h"
+	"Curicula.h"
 	<iostream>
 	<stdlib.h>
 	<string.h>
+
+1676107370 source:d:\down\oop c++\model\model\src\exceptie.cpp
+	"Exceptie.h"
+	<iostream>
+	<stdlib.h>
+	<string.h>
+
+1676106395 d:\down\oop c++\model\model\include\exceptie.h
+	<iostream>
+	<stdlib.h>
+	<string.h>
+
+1676133223 d:\down\oop c++\model\model\include\persoana.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+	"Exceptie.h"
+
+1676132427 source:d:\down\oop c++\model\model\src\persoana.cpp
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119316 d:\down\oop c++\model\model\include\profesor.h
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119438 source:d:\down\oop c++\model\model\src\profesor.cpp
+	"Profesor.h"
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119553 source:d:\down\oop c++\model\model\src\student.cpp
+	"Student.h"
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119596 d:\down\oop c++\model\model\include\student.h
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119790 d:\down\oop c++\model\model\include\disciplina.h
+	"Profesor.h"
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676119790 source:d:\down\oop c++\model\model\src\disciplina.cpp
+	"Disciplina.h"
+	"Profesor.h"
+	"Persoana.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676120451 source:d:\down\oop c++\model\model\src\curicula.cpp
+	"Curicula.h"
+	"Disciplina.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
+
+1676120484 d:\down\oop c++\model\model\include\curicula.h
+	"Disciplina.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<string>
 
