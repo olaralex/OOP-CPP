@@ -1,6 +1,8 @@
 #ifndef PROFESOR_H
 #define PROFESOR_H
 
+///Clase
+#include "Exceptie.h"
 #include "Persoana.h"
 
 #include <iostream>
@@ -18,7 +20,7 @@ class Profesor : public Persoana
     char titlu[20]; /* profesor / conferentiar / s.l. / asistent */
     char _buff[50]; /* utilizat pentru constructii de siruri returnate */
 public:
-    Profesor( Persoana &p, char _titlu[]);
+    Profesor( Persoana &p, const char _titlu[]);
     int getIDProf(void);
     char* retNumeComplet(void);
 };

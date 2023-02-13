@@ -1,3 +1,5 @@
+///Clase
+#include "Exceptie.h"
 #include "Student.h"
 #include "Persoana.h"
 
@@ -9,7 +11,7 @@
 
 using namespace std;
 
-Student::Student(Persoana &_pers, char _nr_mat[], char _spec[]) : Persoana(_pers)
+Student::Student(Persoana &_pers, const char _nr_mat[], const char _spec[]) : Persoana(_pers)
 {
     //de completat
     strcpy(nr_mat,_nr_mat);

@@ -190,7 +190,7 @@ class Curicula
     char den_specializ[50]; //Specializare
     int  sem[20];           //semestre: 1/2/3/4/5/6/7/8...
     int  id_disc[20];       //id-uri discipline din curicula
-    char tip_disc[20][20];  //*Obigatorie/Facultativa/Optionala ..
+    char tip_disc[20][20];  //Obigatorie/Facultativa/Optionala ..
 public:
     Curicula(char _spec[]) : N(0)
     {
@@ -213,15 +213,16 @@ int main()
 {
     cout << "[MODEL EXAMEN POO - 2015]" << endl;
     cout << "\nINTRODUCERE DATE" << endl;
+
     try
     {
-        Persoana p1("Ionescu", "Ion", "20.03.1992");
-        Persoana p2("Popescu", "Vasile", "10.04.1993");
+        Persoana p1("IONESCU", "Ion", "20.03.1992");
+        Persoana p2("POPESCU", "Vasile", "10.04.1993");
         Persoana p3;
-        Persoana p4("Constantinescu", "Sorin", "20.03.1962");
-        Persoana p5("Becali", "George", "02.07.1960");
-        Persoana p6("Mancdachi", "Stefan", "11.02.1986");
-        //cin >> p3;
+        Persoana p4("CONSTANTINESCU", "Sorin", "20.03.1962");
+        Persoana p5("BECALI", "Gheorghe", "02.07.1960");
+        Persoana p6("MANDACHI", "Stefan", "11.02.1986");
+        cin >> p3;
         Student  *st[NrStudenti];
         st[0] = new Student( p1, "01/C", "Calculatoare" );
         st[1] = new Student( p2, "02/C", "Calculatoare" );
@@ -233,7 +234,7 @@ int main()
 
         cout << endl;
         cout << "STUDENTII: " << endl;
-        for(int i=0;i<6;i++)
+        for(int i=0; i<6; i++)
         {
             cout << "\t" << st[i]->retNumeComplet() << endl;
         }
@@ -242,10 +243,10 @@ int main()
         Persoana pr1("MARINESCU", "Vasile", "23.09.1972");
         Persoana pr2("CORBU", "Stefan", "11.02.1973");
         Persoana pr3/*pr3("Olar", "Alex", "14.05.2002")*/;
-        Persoana pr4("Constantinescu", "Sorin", "20.03.1962");
-        Persoana pr5("Becali", "George", "02.07.1960");
-        Persoana pr6("Mancdachi", "Stefan", "11.02.1986");
-        //cin>>pr3;
+        Persoana pr4("CONSTANTINESCU", "Sorin", "20.03.1962");
+        Persoana pr5("BECALI", "Gheorghe", "02.07.1960");
+        Persoana pr6("MANDACHI", "Stefan", "11.02.1986");
+        cin>>pr3;
         Profesor *pr[NrProfesori];
         pr[0] = new Profesor( pr1, "S.L.");
         pr[1] = new Profesor( pr2, "Profesor");
@@ -257,24 +258,24 @@ int main()
 
         cout << endl;
         cout << "PROFESORII: " << endl;
-        for(int i=0;i<6;i++)
+        for(int i=0; i<6; i++)
         {
             cout << "\t" << pr[i]->retNumeComplet() << endl;
         }
         cout << endl;
 
         Disciplina *disc[ NrDiscipline ];
-        disc[0] = new Disciplina("PCLP I", *pr[0]);
-        disc[1] = new Disciplina("Fizica", *pr[1]);
-        disc[2] = new Disciplina("Analiza Matematica", *pr[2]);
+        disc[0] = new Disciplina((char*)"PCLP I", *pr[0]);
+        disc[1] = new Disciplina((char*)"Fizica", *pr[1]);
+        disc[2] = new Disciplina((char*)"Analiza Matematica", *pr[2]);
         /*de continuat*/
-        disc[3] = new Disciplina("PCLP I", *pr[3]);
-        disc[4] = new Disciplina("Fizica", *pr[4]);
-        disc[5] = new Disciplina("Analiza Matematica", *pr[5]);
+        disc[3] = new Disciplina((char*)"PCLP I", *pr[3]);
+        disc[4] = new Disciplina((char*)"Fizica", *pr[4]);
+        disc[5] = new Disciplina((char*)"Analiza Matematica", *pr[5]);
 
         cout << endl;
         cout << "DISCIPLINELE: " << endl;
-        for(int i=0;i<6;i++)
+        for(int i=0; i<6; i++)
         {
             cout << "\t" << disc[i]->retNumeComplet() << endl;
         }
@@ -292,17 +293,72 @@ int main()
         cout<<"\tDisciplina: "<<pers[3]->retNumeComplet()<<endl;
         cout<<"\tEND Teste POLIMORFISM!"<<endl;
 
+        ///Curicula 0
         Curicula *curicula[ NrCuricule ];
-        curicula[0] = new Curicula( "Calculatoare" );
-        curicula[0]->Add(1, *disc[0], "Obligatorie");
-        curicula[0]->Add(1, *disc[1], "Obligatorie");
-        curicula[0]->Add(5, *disc[2], "Optionala");
+        curicula[0] = new Curicula((char*) "Calculatoare" );
+        curicula[0]->Add(1, *disc[0], (char*) "Obligatorie");
+        curicula[0]->Add(2, *disc[1], (char*) "Facultativa");
+        curicula[0]->Add(3, *disc[2], (char*) "Optionala");
         /*de continuat*/
+        curicula[0]->Add(1, *disc[3], (char*) "Obligatorie");
+        curicula[0]->Add(2, *disc[4], (char*) "Facultativa");
+        curicula[0]->Add(3, *disc[5], (char*) "Optionala");
 
-        curicula[1] = new Curicula( "Automatica" );
-        curicula[1]->Add(1, *disc[1], "Obligatorie");
-        curicula[1]->Add(1, *disc[2], "Obligatorie");
+        ///Curicula 1
+        curicula[1] = new Curicula( (char*) "Automatica" );
+        curicula[1]->Add(1, *disc[0], (char*) "Obligatorie");
+        curicula[1]->Add(2, *disc[1], (char*) "Facultativa");
+        curicula[1]->Add(3, *disc[2], (char*) "Optionala");
         /*de continuat*/
+        curicula[1]->Add(1, *disc[3], (char*) "Obligatorie");
+        curicula[1]->Add(2, *disc[4], (char*) "Facultativa");
+        curicula[1]->Add(3, *disc[5], (char*) "Optionala");
+
+        cout << "\nCALCULE PROBLEMA" << endl;
+        cout <<"\tAfisare curicula"<<endl;
+        cout << endl;
+        cout << "Curicula 0: " << endl;
+        curicula[0]->PrintCuricula(disc);
+        cout << endl;
+        cout << endl;
+        cout << "Curicula 1: " << endl;
+        curicula[1]->PrintCuricula(disc);
+        cout << endl;
+
+        cout <<"\tAfisare curicula pe semestrul 3"<<endl;
+        cout << endl;
+        cout << "Curicula 0 Semestrul 3: " << endl << endl;
+        curicula[0]->PrintCuriculaSem(disc, 3);
+        cout << endl;
+        cout << endl;
+        cout << "Curicula 1 Semestrul 2: " << endl << endl;
+        curicula[1]->PrintCuriculaSem(disc, 2);
+        cout << endl;
+
+        cout <<"\tCauta toti profesorii ce contin subsirul 'MARI' in NUME"<<endl;
+        cout << endl;
+        curicula[0]->PrintProfesori(pr, "MARI");
+        cout << endl;
+        cout <<"\tCauta toti profesorii ce contin subsirul 'ALI' in NUME"<<endl;
+        cout << endl;
+        curicula[1]->PrintProfesori(pr, "ALI");
+        cout << endl;
+
+        cout <<"\tAfisare curicula pentru un student"<<endl;
+        cout << endl;
+        curicula[1]->PrintCuriculaStud(disc, st, 1);
+        cout << endl;
+
+        cout <<"\tAdministrare Note Student"<<endl;
+        //st[0].introduNote( curicula, /*sem*/1 );
+        //st[0].introduNote( curicula, /*sem*/2 );
+        //st[0].situatieScolara( curicula );
+
+        cout <<"\tAnaliza curicule"<<endl;
+        //Curicula::AnalizaIdentic( curicula[0], curicula[1] );
+        //Curicula::AnalizaDiferit( curicula[0], curicula[1] );
+
+        cout <<"[END SUBIECT]"<<endl;
     }
     catch(Exceptie ex)
     {
@@ -314,30 +370,5 @@ int main()
         cout<<"Exceptie nedefinita!"<<endl;
         exit( -1 );
     }
-
-    cout << "\nCALCULE PROBLEMA" << endl;
-    cout <<"\tAfisare curicula"<<endl;
-    //curicula[0]->PrintCuricula();
-    //curicula[0]->PrintCuricula();
-
-    cout <<"\tAfisare curicula pe semestrul 3"<<endl;
-    //curicula[0]->PrintCuriculaSem( 3 );
-
-    cout <<"\tCauta toti profesorii ce contin subsirul 'MARI' in NUME"<<endl;
-    //curicula[0]->PrintProfesori("MARI");
-
-    cout <<"\tAfisare curicula pentru un student"<<endl;
-    //Curicula::PrintCuriculaStud( curicula, st[1] );
-
-    cout <<"\tAdministrare Note Student"<<endl;
-    //st[0].introduNote( curicula, /*sem*/1 );
-    //st[0].introduNote( curicula, /*sem*/2 );
-    //st[0].situatieScolara( curicula );
-
-    cout <<"\tAnaliza curicule"<<endl;
-    //Curicula::AnalizaIdentic( curicula[0], curicula[1] );
-    //Curicula::AnalizaDiferit( curicula[0], curicula[1] );
-
-    cout <<"[END SUBIECT]"<<endl;
     return 0;
 }

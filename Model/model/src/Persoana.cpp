@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Persoana::Persoana( char _nume[], char _prenume[], char _data_n[])
+Persoana::Persoana(const char _nume[], const char _prenume[], const char _data_n[])
 {
     strcpy(nume,_nume);
     strcpy(prenume,_prenume);

@@ -1,6 +1,8 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+///Clase
+#include "Exceptie.h"
 #include "Persoana.h"
 
 #include <iostream>
@@ -17,7 +19,7 @@ class Student : public Persoana
     char specializ[20]; //Specializare
     char _buff[100]; // utilizat pentru constructii de siruri returnate
 public:
-    Student(Persoana &_pers, char _nr_mat[], char _spec[]);
+    Student(Persoana &_pers, const char _nr_mat[], const char _spec[]);
     char* retNumeComplet(void);
     char* retNrMat(void);
     char* retSpec(void);

@@ -13,7 +13,7 @@ class Exceptie
 public:
     Exceptie();
     ~Exceptie();
-    Exceptie(char _catEx[], char _tipEx[]);
+    Exceptie(const char _catEx[], const char _tipEx[]);
     void Print(void);
 };
 

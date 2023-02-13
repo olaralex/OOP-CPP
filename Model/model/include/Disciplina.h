@@ -1,6 +1,8 @@
 #ifndef DISCIPLINA_H
 #define DISCIPLINA_H
 
+///Clase
+#include "Exceptie.h"
 #include "Profesor.h"
 #include "Persoana.h"
 

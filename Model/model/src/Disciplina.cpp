@@ -1,3 +1,5 @@
+///Clase
+#include "Exceptie.h"
 #include "Disciplina.h"
 #include "Profesor.h"
 #include "Persoana.h"

@@ -1,3 +1,5 @@
+///Clase
+#include "Exceptie.h"
 #include "Profesor.h"
 #include "Persoana.h"
 
@@ -9,7 +11,7 @@
 
 using namespace std;
 
-Profesor::Profesor( Persoana &p, char _titlu[]) : Persoana(p), id_prof( ++nextID )
+Profesor::Profesor( Persoana &p, const char _titlu[]) : Persoana(p), id_prof( ++nextID )
 {
     if( strcmp(_titlu, "Profesor") != 0 && strcmp(_titlu, "Conferentiar") != 0 && strcmp(_titlu, "S.L." ) && strcmp(_titlu, "Asistent" ) != 0 )
     {

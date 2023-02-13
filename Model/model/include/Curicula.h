@@ -1,7 +1,11 @@
 #ifndef CURICULA_H
 #define CURICULA_H
 
+///Clase
+#include "Exceptie.h"
 #include "Disciplina.h"
+#include "Profesor.h"
+#include "Student.h"
 
 #include <iostream>
 #include <fstream>
@@ -19,8 +23,12 @@ class Curicula
     int  id_disc[20];       //id-uri discipline din curicula
     char tip_disc[20][20];  //*Obigatorie/Facultativa/Optionala ..
 public:
-    Curicula(char _spec[]);
-    void Add( int _sem, Disciplina &d, char _tip[] );
+    Curicula(const char _spec[]);
+    void Add(const int _sem, Disciplina &d, const char _tip[] );
+    void PrintCuricula(Disciplina *disc[]);
+    void PrintCuriculaSem(Disciplina *disc[], const int _sem);
+    void PrintProfesori(Profesor *pr[], const char _nume[]);
+    void PrintCuriculaStud(Disciplina *disc[], Student *st[], const int _nr);
 };
 
 #endif // CURICULA_H

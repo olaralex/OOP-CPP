@@ -16,7 +16,7 @@ Exceptie::~Exceptie()
     //dtor
 }
 
-Exceptie::Exceptie(char _catEx[], char _tipEx[])
+Exceptie::Exceptie(const char _catEx[], const char _tipEx[])
 {
     strcpy(catEx, _catEx );
     strcpy(tipEx, _tipEx );
